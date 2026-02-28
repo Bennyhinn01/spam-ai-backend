@@ -12,6 +12,9 @@ CORS(app)
 
 # Load vectorizer + model
 vectorizer, model = joblib.load("spam_model.pkl")
+@app.route("/")
+def home():
+    return "Spam AI Backend is running 🚀"
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -32,3 +35,4 @@ if __name__ == "__main__":
 @app.route("/")
 def home():
     return "Spam AI API is running 🚀"
+
